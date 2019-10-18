@@ -36,7 +36,7 @@ int main(int argc, char* argv[])
 		int n = 4;
 		Program prog;
 
-		prog << std::make_shared<IMov>("(D,n-1)");
+		prog << std::make_shared<IMov>("(D,"+std::to_string(n)+")");
 		prog << std::make_shared<IMov>("(A,0)");
 		prog << std::make_shared<IMov>("(B,1)");
 
