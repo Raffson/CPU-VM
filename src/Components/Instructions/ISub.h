@@ -15,23 +15,23 @@ namespace AR {
 /**
  *  \brief Class for the SUB instruction.
  */
-class ISub: public AR::BinaryInstruction {
+class ISub : public AR::BinaryInstruction {
 public:
-	/**
+    /**
 	 *  \brief Custom constructor that only calls it's superclass' constructor.
 	 */
-	ISub(const std::string& code);
+    ISub(const std::string& code);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~ISub();
+    virtual ~ISub();
 
-	/**
+    /**
 	 *  \brief Implements the execution of this instruction.
 	 */
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const;
 };
 } /* namespace AR */
 

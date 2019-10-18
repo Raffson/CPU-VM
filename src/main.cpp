@@ -5,7 +5,7 @@
  *      Author: Raffson
  */
 
- /*! \mainpage Exam for Advanced Programming at University of Antwerp
+/*! \mainpage Exam for Advanced Programming at University of Antwerp
  *
  * \section intro_sec Introduction
  *
@@ -54,7 +54,6 @@
  *  This file will be responsible for directing all components for RM.
  */
 
-
 /**
  *  \namespace AR
  *  \brief A namespace to bundle the work.
@@ -68,39 +67,37 @@ using namespace AR;
  */
 int main(int argc, char* argv[])
 {
-	try {
-		int n = 10;
-		if( argc > 1){
-			try{
-				n = atoi(argv[1]);
-			}
-			catch(std::exception& e){
-				n = 10;
-			}
-		}
-		//Program prog("MOV(D,"+std::to_string(n-1)+");MOV(A,0);MOV(B,1);MOV(C,B);ADD(B,A);MOV(A,C);DEC(D);JNZ(3);");
-		Program prog;
-		prog << std::make_shared<IMov>("(D,"+std::to_string(n-1)+")");
-		prog << std::make_shared<IMov>("(A,0)");
-		prog << std::make_shared<IMov>("(B,1)");
+    try {
+        int n = 10;
+        if (argc > 1) {
+            try {
+                n = atoi(argv[1]);
+            } catch (std::exception& e) {
+                n = 10;
+            }
+        }
+        //Program prog("MOV(D,"+std::to_string(n-1)+");MOV(A,0);MOV(B,1);MOV(C,B);ADD(B,A);MOV(A,C);DEC(D);JNZ(3);");
+        Program prog;
+        prog << std::make_shared<IMov>("(D," + std::to_string(n - 1) + ")");
+        prog << std::make_shared<IMov>("(A,0)");
+        prog << std::make_shared<IMov>("(B,1)");
 
-		prog << std::make_shared<IMov>("(C,B)");
-		prog << std::make_shared<IAdd>("(B,A)");
-		prog << std::make_shared<IMov>("(A,C)");
+        prog << std::make_shared<IMov>("(C,B)");
+        prog << std::make_shared<IAdd>("(B,A)");
+        prog << std::make_shared<IMov>("(A,C)");
 
-		prog << std::make_shared<IDec>("(D)");
-		prog << std::make_shared<IJNZ>("(3)");
+        prog << std::make_shared<IDec>("(D)");
+        prog << std::make_shared<IJNZ>("(3)");
 
-		Machine m;
-		m.run(prog);
+        Machine m;
+        m.run(prog);
 
-		std::cout << "F_" << n << " = " << m.getRegister("B").getContent()
-				<< std::endl;
+        std::cout << "F_" << n << " = " << m.getRegister("B").getContent()
+                  << std::endl;
 
-		std::cout << std::endl;
-	}
-	catch (std::exception& e) {
-		std::cout << "Fatal error encountered: " << e.what() << std::endl;
-	}
-	return 0;
+        std::cout << std::endl;
+    } catch (std::exception& e) {
+        std::cout << "Fatal error encountered: " << e.what() << std::endl;
+    }
+    return 0;
 }

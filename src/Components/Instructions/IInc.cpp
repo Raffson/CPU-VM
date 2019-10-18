@@ -9,31 +9,31 @@
 
 namespace AR {
 
-IInc::IInc(const std::string& code) : UnaryInstruction(code)
+IInc::IInc(const std::string& code)
+    : UnaryInstruction(code)
 {
-	// Nothing else should be done
+    // Nothing else should be done
 }
 
-IInc::~IInc() {
-	// TODO Auto-generated destructor stub
+IInc::~IInc()
+{
+    // TODO Auto-generated destructor stub
 }
 
 void IInc::execute(std::vector<Register>& data,
-		bool& equal, bool& zero) const
+    bool& equal, bool& zero) const
 {
-	equal = false;
-	zero = false;
-	for( auto& i : data )
-	{
-		if( i.name == dest )
-		{
-			++i.content;
-			if( i.content == 0 ) zero = true;
-			return;
-		}
-	}
-	throw std::runtime_error("Register '"+dest+"' does not exist!");
+    equal = false;
+    zero = false;
+    for (auto& i : data) {
+        if (i.name == dest) {
+            ++i.content;
+            if (i.content == 0)
+                zero = true;
+            return;
+        }
+    }
+    throw std::runtime_error("Register '" + dest + "' does not exist!");
 }
-
 
 } /* namespace AR */

@@ -15,23 +15,23 @@ namespace AR {
 /**
  *  \brief Class for the MOV (move/load immediate) instruction.
  */
-class IMov: public AR::BinaryInstruction {
+class IMov : public AR::BinaryInstruction {
 public:
-	/**
+    /**
 	 *  \brief Custom constructor that only calls it's superclass' constructor.
 	 */
-	IMov(const std::string& code);
+    IMov(const std::string& code);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~IMov();
+    virtual ~IMov();
 
-	/**
+    /**
 	 *  \brief Implements the execution of this instruction.
 	 */
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const;
 };
 
 } /* namespace AR */

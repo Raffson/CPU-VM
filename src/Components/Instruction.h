@@ -9,40 +9,39 @@
 #define INSTRUCTION_H_
 
 #include "Register.h"
-#include <vector>
-#include <typeinfo>
-#include <memory>
-#include <iostream>
 #include <exception>
+#include <iostream>
+#include <memory>
 #include <string>
-
+#include <typeinfo>
+#include <vector>
 
 namespace AR {
 
 class Instruction; // forward declaration for typedef
-typedef std::vector<std::shared_ptr<Instruction> > Instructions;
+typedef std::vector<std::shared_ptr<Instruction>> Instructions;
 
 /**
  *  \brief Abstract Base Class for an instruction.
  */
 class Instruction {
 public:
-	/**
+    /**
 	 *  \brief Default constructor.
 	 */
-	Instruction();
+    Instruction();
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~Instruction();
+    virtual ~Instruction();
 
-	/**
+    /**
 	 *  \brief Pure virtual function that should be implemented
 	 *		by derived classes.
 	 */
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const = 0;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const = 0;
 };
 
 } /* namespace AR */

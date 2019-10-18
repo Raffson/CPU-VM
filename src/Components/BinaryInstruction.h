@@ -17,33 +17,33 @@ namespace AR {
  */
 class BinaryInstruction : public AR::Instruction {
 protected:
-	/**
+    /**
 	 *  \brief Represents the destination register.
 	 */
-	std::string dest;
+    std::string dest;
 
-	/**
+    /**
 	 *  \brief Represents the destination register.
 	 */
-	std::string src;
+    std::string src;
 
 public:
-	/**
+    /**
 	 *  \brief Custom constructor to be used for all derived classes.
 	 */
-	BinaryInstruction(const std::string& code);
+    BinaryInstruction(const std::string& code);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~BinaryInstruction();
+    virtual ~BinaryInstruction();
 
-	/**
+    /**
 	 *  \brief Still a pure virtual function to be implemented
 	 *		by derived classes.
 	 */
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const = 0;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const = 0;
 };
 
 } /* namespace AR */

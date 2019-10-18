@@ -10,7 +10,6 @@
 
 #include "Instruction.h"
 
-
 namespace AR {
 
 /**
@@ -18,28 +17,28 @@ namespace AR {
  */
 class UnaryInstruction : public AR::Instruction {
 protected:
-	/**
+    /**
 	 *  \brief Represents the destination register.
 	 */
-	std::string dest;
+    std::string dest;
 
 public:
-	/**
+    /**
 	 *  \brief Custom constructor to be used for all derived classes.
 	 */
-	UnaryInstruction(const std::string& code);
+    UnaryInstruction(const std::string& code);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~UnaryInstruction();
+    virtual ~UnaryInstruction();
 
-	/**
+    /**
 	 *  \brief Still a pure virtual function to be implemented
 	 *		by derived classes.
 	 */
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const = 0;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const = 0;
 };
 
 } /* namespace AR */

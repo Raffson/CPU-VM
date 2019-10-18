@@ -15,43 +15,42 @@ namespace AR {
 /**
  *  \brief Class for the JNE (jump not equal) instruction.
  */
-class IJNE: public AR::UnaryInstruction {
+class IJNE : public AR::UnaryInstruction {
 public:
-	/**
+    /**
 	 *  \brief Custom constructor that only calls it's superclass' constructor.
 	 */
-	IJNE(const std::string& code);
+    IJNE(const std::string& code);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~IJNE();
+    virtual ~IJNE();
 
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const;
 };
-
 
 /**
  *  \brief Class for the JNZ (jump not zero) instruction.
  */
-class IJNZ: public AR::UnaryInstruction {
+class IJNZ : public AR::UnaryInstruction {
 public:
-	/**
+    /**
 	 *  \brief Custom constructor that only calls it's superclass' constructor.
 	 */
-	IJNZ(const std::string& code);
+    IJNZ(const std::string& code);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~IJNZ();
+    virtual ~IJNZ();
 
-	/**
+    /**
 	 *  \brief Implements the execution of this instruction.
 	 */
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const;
 };
 
 } /* namespace AR */

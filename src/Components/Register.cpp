@@ -9,13 +9,17 @@
 
 namespace AR {
 
-Register::Register(const std::string& n, const byte& c) : name(n), content(c) { }
+Register::Register(const std::string& n, const byte& c)
+    : name(n)
+    , content(c)
+{
+}
 
-Register::~Register() { }
+Register::~Register() {}
 
 const byte& Register::getContent() const
 {
-	return content;
+    return content;
 }
 
 } /* namespace AR */

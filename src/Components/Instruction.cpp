@@ -9,13 +9,14 @@
 
 namespace AR {
 
-Instruction::Instruction() {
-	// TODO Auto-generated constructor stub
-
+Instruction::Instruction()
+{
+    // TODO Auto-generated constructor stub
 }
 
-Instruction::~Instruction() {
-	// TODO Auto-generated destructor stub
+Instruction::~Instruction()
+{
+    // TODO Auto-generated destructor stub
 }
 
 } /* namespace AR */

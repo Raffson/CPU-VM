@@ -15,23 +15,23 @@ namespace AR {
 /**
  *  \brief Class for the ADD instruction.
  */
-class IAdd: public AR::BinaryInstruction {
+class IAdd : public AR::BinaryInstruction {
 public:
-	/**
+    /**
 	 *  \brief Custom constructor that only calls it's superclass' constructor.
 	 */
-	IAdd(const std::string& code);
+    IAdd(const std::string& code);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~IAdd();
+    virtual ~IAdd();
 
-	/**
+    /**
 	 *  \brief Implements the execution of this instruction.
 	 */
-	virtual void execute(std::vector<Register>& data,
-			bool& equal, bool& zero) const;
+    virtual void execute(std::vector<Register>& data,
+        bool& equal, bool& zero) const;
 };
 
 } /* namespace AR */

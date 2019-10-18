@@ -9,38 +9,35 @@
 
 namespace AR {
 
-ICMP::ICMP(const std::string& code) : BinaryInstruction(code)
+ICMP::ICMP(const std::string& code)
+    : BinaryInstruction(code)
 {
-	// Nothing else should be done
+    // Nothing else should be done
 }
 
-ICMP::~ICMP() {
-	// TODO Auto-generated destructor stub
+ICMP::~ICMP()
+{
+    // TODO Auto-generated destructor stub
 }
 
 void ICMP::execute(std::vector<Register>& data,
-		bool& equal, bool& zero) const
+    bool& equal, bool& zero) const
 {
-	equal = false;
-	zero = false;
-	for( auto& i : data )
-	{
-		if( i.name == src )
-		{
-			for( auto& j : data )
-			{
-				if( j.name == dest )
-				{
-					if( j.content == i.content ) equal = true;
-					return;
-				}
-			}
-			throw std::runtime_error("Register '"+dest+"' does not exist!");
-		}
-		else
-			throw std::runtime_error("Register '"+src+"' does not exist!");
-	}
+    equal = false;
+    zero = false;
+    for (auto& i : data) {
+        if (i.name == src) {
+            for (auto& j : data) {
+                if (j.name == dest) {
+                    if (j.content == i.content)
+                        equal = true;
+                    return;
+                }
+            }
+            throw std::runtime_error("Register '" + dest + "' does not exist!");
+        } else
+            throw std::runtime_error("Register '" + src + "' does not exist!");
+    }
 }
-
 
 } /* namespace AR */

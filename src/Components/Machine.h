@@ -25,39 +25,39 @@ typedef std::vector<Register> memory;
  */
 class Machine {
 private:
-	/**
+    /**
 	 *  \brief Represents the registers of the virtual CPU.
 	 */
-	memory mem;
+    memory mem;
 
-	/**
+    /**
 	 *  \brief Represents the flags of the virtual CPU.
 	 */
-	std::map<std::string, bool> flags;
+    std::map<std::string, bool> flags;
 
 public:
-	/**
+    /**
 	 *  \brief Default constructor.
 	 */
-	Machine();
+    Machine();
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~Machine();
+    virtual ~Machine();
 
-	/**
+    /**
 	 *  \brief Runs a program.
 	 *	\param p The program to be executed
 	 */
-	void run(const Program& p);
+    void run(const Program& p);
 
-	/**
+    /**
 	 *  \brief Get the register with the specified name.
 	 *	\param n The name of the register to return.
 	 *	\return The register with the specified name.
 	 */
-	const Register& getRegister(const std::string& n) const;
+    const Register& getRegister(const std::string& n) const;
 };
 
 } /* namespace AR */

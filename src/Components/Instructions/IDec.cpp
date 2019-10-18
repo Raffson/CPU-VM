@@ -9,31 +9,31 @@
 
 namespace AR {
 
-IDec::IDec(const std::string& code) : UnaryInstruction(code)
+IDec::IDec(const std::string& code)
+    : UnaryInstruction(code)
 {
-	// Nothing else ought to be done
+    // Nothing else ought to be done
 }
 
-IDec::~IDec() {
-	// TODO Auto-generated destructor stub
+IDec::~IDec()
+{
+    // TODO Auto-generated destructor stub
 }
 
 void IDec::execute(std::vector<Register>& data,
-		bool& equal, bool& zero) const
+    bool& equal, bool& zero) const
 {
-	equal = false;
-	zero = false;
-	for( auto& i : data )
-	{
-		if( i.name == dest )
-		{
-			--i.content;
-			if( i.content == 0 ) zero = true;
-			return;
-		}
-	}
-	throw std::runtime_error("Register '"+dest+"' does not exist!");
+    equal = false;
+    zero = false;
+    for (auto& i : data) {
+        if (i.name == dest) {
+            --i.content;
+            if (i.content == 0)
+                zero = true;
+            return;
+        }
+    }
+    throw std::runtime_error("Register '" + dest + "' does not exist!");
 }
-
 
 } /* namespace AR */

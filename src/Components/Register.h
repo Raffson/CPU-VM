@@ -19,46 +19,45 @@ typedef int byte; // An integer is actually 4 bytes...
  *  \brief Will represent Register for the VM.
  */
 class Register {
-	friend class Machine; //friend so it can manipulate the content.
-	friend class IMov; //friend so it can manipulate the content.
-	friend class IAdd; //friend so it can manipulate the content.
-	friend class ISub; //friend so it can manipulate the content.
-	friend class IInc; //friend so it can manipulate the content.
-	friend class IDec; //friend so it can manipulate the content.
-	friend class ICMP; //friend so it can manipulate the content.
-	friend class IJNE; //friend so it can manipulate the content.
-	friend class IJNZ; //friend so it can manipulate the content.
+    friend class Machine; //friend so it can manipulate the content.
+    friend class IMov; //friend so it can manipulate the content.
+    friend class IAdd; //friend so it can manipulate the content.
+    friend class ISub; //friend so it can manipulate the content.
+    friend class IInc; //friend so it can manipulate the content.
+    friend class IDec; //friend so it can manipulate the content.
+    friend class ICMP; //friend so it can manipulate the content.
+    friend class IJNE; //friend so it can manipulate the content.
+    friend class IJNZ; //friend so it can manipulate the content.
 
 private:
-
-	/**
+    /**
 	 *  \brief Will represent the Register's name.
 	 */
-	std::string name;
+    std::string name;
 
-	/**
+    /**
 	 *  \brief Will represent the Register.
 	 */
-	byte content;
-public:
+    byte content;
 
-	/**
+public:
+    /**
 	 *  \brief Custom constructor.
 	 *  \param n The name to be used.
 	 *  \param c The value to be initialized.
 	 */
-	Register(const std::string& n, const byte& c = 0);
+    Register(const std::string& n, const byte& c = 0);
 
-	/**
+    /**
 	 *  \brief Default destructor.
 	 */
-	virtual ~Register();
+    virtual ~Register();
 
-	/**
+    /**
 	 *  \brief Get the content of the register.
 	 *  \return Content of the register.
 	 */
-	const byte& getContent() const;
+    const byte& getContent() const;
 };
 
 } /* namespace AR */
