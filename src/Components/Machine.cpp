@@ -45,7 +45,7 @@ void Machine::run(const Program& p)
 	}
 }
 
-Register Machine::getRegister(const std::string& n) const
+const Register& Machine::getRegister(const std::string& n) const
 {
 	for( auto& i : mem )
 	{

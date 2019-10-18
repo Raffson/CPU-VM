@@ -12,21 +12,11 @@
 
 namespace AR {
 
-typedef int byte;
-
-class Machine; //forward declaration
-class IMov; //forward declaration
-class IAdd; //forward declaration
-class ISub; //forward declaration
-class IInc; //forward declaration
-class IDec; //forward declaration
-class ICMP; //forward declaration
-class IJNE; //forward declaration
-class IJNZ; //forward declaration
+typedef int byte; // An integer is actually 4 bytes...
 
 /**
  *  \class Register
- *  \brief Will represent Register for the BrainFuckVM.
+ *  \brief Will represent Register for the VM.
  */
 class Register {
 	friend class Machine; //friend so it can manipulate the content.
@@ -64,6 +54,10 @@ public:
 	 */
 	virtual ~Register();
 
+	/**
+	 *  \brief Get the content of the register.
+	 *  \return Content of the register.
+	 */
 	const byte& getContent() const;
 };
 

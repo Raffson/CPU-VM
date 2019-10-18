@@ -19,15 +19,28 @@
 
 namespace AR {
 
-class Instruction;
+class Instruction; // forward declaration for typedef
 typedef std::vector<std::shared_ptr<Instruction> > Instructions;
-typedef unsigned int pointer;
 
+/**
+ *  \brief Abstract Base Class for an instruction.
+ */
 class Instruction {
 public:
+	/**
+	 *  \brief Default constructor.
+	 */
 	Instruction();
+
+	/**
+	 *  \brief Default destructor.
+	 */
 	virtual ~Instruction();
 
+	/**
+	 *  \brief Pure virtual function that should be implemented
+	 *		by derived classes.
+	 */
 	virtual void execute(std::vector<Register>& data,
 			const Instructions& ins,
 			bool& equal, bool& zero) const = 0;

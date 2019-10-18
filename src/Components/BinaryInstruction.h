@@ -12,14 +12,36 @@
 
 namespace AR {
 
+/**
+ *  \brief Abstact class for binary instructions.
+ */
 class BinaryInstruction : public AR::Instruction {
 protected:
+	/**
+	 *  \brief Represents the destination register.
+	 */
 	std::string dest;
+
+	/**
+	 *  \brief Represents the destination register.
+	 */
 	std::string src;
+
 public:
+	/**
+	 *  \brief Custom constructor to be used for all derived classes.
+	 */
 	BinaryInstruction(const std::string& code);
+
+	/**
+	 *  \brief Default destructor.
+	 */
 	virtual ~BinaryInstruction();
 
+	/**
+	 *  \brief Still a pure virtual function to be implemented
+	 *		by derived classes.
+	 */
 	virtual void execute(std::vector<Register>& data,
 			const Instructions& ins,
 			bool& equal, bool& zero) const = 0;
