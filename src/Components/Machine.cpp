@@ -11,7 +11,7 @@ namespace AR {
 
 Machine::Machine()
 {
-	Register A("AAAAAAA");
+	Register A("A");
 	Register B("B");
 	Register C("C");
 	Register D("D");

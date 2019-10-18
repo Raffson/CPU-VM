@@ -18,7 +18,7 @@ BinaryInstruction::BinaryInstruction(const std::string& code) {
 			{
 				if( code[j] == ',' )
 				{
-					dest = code.substr(i+1, j-1);
+					dest = code.substr(i+1, j-i-1);
 				}
 			}
 		}
@@ -28,7 +28,7 @@ BinaryInstruction::BinaryInstruction(const std::string& code) {
 			{
 				if( code[j] == ')' )
 				{
-					src = code.substr(i+1);
+					src = code.substr(i+1, j-i);
 					src.pop_back();
 				}
 			}

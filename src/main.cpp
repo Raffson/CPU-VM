@@ -42,15 +42,15 @@ int main(int argc, char* argv[])
 				n = 10;
 			}
 		}
+		//Program prog("MOV(D,"+std::to_string(n-1)+");MOV(A,0);MOV(B,1);MOV(C,B);ADD(B,A);MOV(A,C);DEC(D);JNZ(3);");
 		Program prog;
-
 		prog << std::make_shared<IMov>("(D,"+std::to_string(n-1)+")");
-		prog << std::make_shared<IMov>("(AAAAAAA,0)");
+		prog << std::make_shared<IMov>("(A,0)");
 		prog << std::make_shared<IMov>("(B,1)");
 
 		prog << std::make_shared<IMov>("(C,B)");
-		prog << std::make_shared<IAdd>("(B,AAAAAAA)");
-		prog << std::make_shared<IMov>("(AAAAAAA,C)");
+		prog << std::make_shared<IAdd>("(B,A)");
+		prog << std::make_shared<IMov>("(A,C)");
 
 		prog << std::make_shared<IDec>("(D)");
 		prog << std::make_shared<IJNZ>("(3)");
