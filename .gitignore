@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+# excluded folders
+build/
+DoxygenDocs/
+
+# exclude executable
+bin/CPU-VM
+
+# .DS_Store
+*.DS_Store
