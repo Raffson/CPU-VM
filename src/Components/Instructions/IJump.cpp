@@ -19,7 +19,6 @@ IJNE::~IJNE() {
 }
 
 void IJNE::execute(std::vector<Register>& data,
-		const Instructions& ins,
 		bool& equal, bool& zero) const
 {
 	zero = false;
@@ -36,12 +35,7 @@ void IJNE::execute(std::vector<Register>& data,
 			throw std::runtime_error("Invalid address value : "+dest);
 			return;
 		}
-		if( d >= ins.size() )
-			throw std::runtime_error("Address out of range : "+dest);
-		else
-		{
-			data.back().content = d-1;
-		}
+		data.back().content = d-1;
 	}
 }
 
@@ -56,7 +50,6 @@ IJNZ::~IJNZ() {
 }
 
 void IJNZ::execute(std::vector<Register>& data,
-		const Instructions& ins,
 		bool& equal, bool& zero) const
 {
 	equal = false;
@@ -73,12 +66,7 @@ void IJNZ::execute(std::vector<Register>& data,
 			throw std::runtime_error("Invalid address value : "+dest);
 			return;
 		}
-		if( d >= ins.size() )
-			throw std::runtime_error("Address out of range : "+dest);
-		else
-		{
-			data.back().content = d-1;
-		}
+		data.back().content = d-1;
 	}
 }
 

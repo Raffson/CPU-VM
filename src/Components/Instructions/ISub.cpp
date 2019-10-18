@@ -19,7 +19,6 @@ ISub::~ISub() {
 }
 
 void ISub::execute(std::vector<Register>& data,
-		const Instructions& ins,
 		bool& equal, bool& zero) const
 {
 	equal = false;

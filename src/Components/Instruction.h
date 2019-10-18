@@ -42,7 +42,6 @@ public:
 	 *		by derived classes.
 	 */
 	virtual void execute(std::vector<Register>& data,
-			const Instructions& ins,
 			bool& equal, bool& zero) const = 0;
 };
 

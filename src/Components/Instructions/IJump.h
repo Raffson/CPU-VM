@@ -28,7 +28,6 @@ public:
 	virtual ~IJNE();
 
 	virtual void execute(std::vector<Register>& data,
-			const Instructions& ins,
 			bool& equal, bool& zero) const;
 };
 
@@ -52,7 +51,6 @@ public:
 	 *  \brief Implements the execution of this instruction.
 	 */
 	virtual void execute(std::vector<Register>& data,
-			const Instructions& ins,
 			bool& equal, bool& zero) const;
 };
 
