@@ -19,7 +19,7 @@ ICMP::ICMP(const std::string& code)
 			{
 				if( code[j] == ',' )
 				{
-					dest = code.substr(i+1, j);
+					dest = code.substr(i+1, j-1);
 				}
 			}
 		}
@@ -29,7 +29,7 @@ ICMP::ICMP(const std::string& code)
 			{
 				if( code[j] == ')' )
 				{
-					src = code.substr(i+1, j);
+					src = code.substr(i+1);
 					src.pop_back();
 				}
 			}
@@ -68,4 +68,3 @@ void ICMP::execute(std::vector<Register>& data,
 
 
 } /* namespace AR */
-

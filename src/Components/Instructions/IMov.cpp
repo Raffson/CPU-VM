@@ -19,7 +19,7 @@ IMov::IMov(const std::string& code)
 			{
 				if( code[j] == ',' )
 				{
-					dest = code.substr(i+1, j-1);
+					dest = code.substr(i+1, j-i-1);
 				}
 			}
 		}
@@ -29,7 +29,7 @@ IMov::IMov(const std::string& code)
 			{
 				if( code[j] == ')' )
 				{
-					src = code.substr(i+1, j);
+					src = code.substr(i+1);
 					src.pop_back();
 				}
 			}

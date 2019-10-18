@@ -29,7 +29,7 @@ IAdd::IAdd(const std::string& code)
 			{
 				if( code[j] == ')' )
 				{
-					src = code.substr(i+1, j);
+					src = code.substr(i+1);
 					src.pop_back();
 				}
 			}

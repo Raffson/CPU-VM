@@ -19,7 +19,7 @@ IJNE::IJNE(const std::string& code)
 			{
 				if( code[j] == ')' )
 				{
-					dest = code.substr(i+1, j);
+					dest = code.substr(i+1);
 					dest.pop_back();
 				}
 			}
@@ -71,7 +71,8 @@ IJNZ::IJNZ(const std::string& code)
 			{
 				if( code[j] == ')' )
 				{
-					dest = code.substr(i+1, j);
+					dest = code.substr(i+1);
+					dest.pop_back();
 				}
 			}
 		}
