@@ -106,7 +106,7 @@ void IJNZ::execute(std::vector<Register>& data,
 			throw std::runtime_error("Address out of range : "+dest);
 		else
 		{
-			data.back().content = d;
+			data.back().content = d-1;
 		}
 	}
 }

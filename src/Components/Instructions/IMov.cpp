@@ -61,29 +61,26 @@ void IMov::execute(std::vector<Register>& data,
 			}
 			throw std::runtime_error("Register '"+dest+"' does not exist!");
 		}
-		else
-		{
-			int d = 0;
-			try
-			{
-				d = atoi( src.c_str() );
-			}
-			catch(...)
-			{
-				throw std::runtime_error("Invalid immediate value : "+src+"");
-			}
+	}
+	int d = 0;
+	try
+	{
+		d = atoi( src.c_str() );
+	}
+	catch(...)
+	{
+		throw std::runtime_error("Invalid immediate value : "+src+"");
+	}
 
-			for( auto& j : data )
-			{
-				if( j.name == dest )
-				{
-					j.content = d;
-					return;
-				}
-			}
-			throw std::runtime_error("Register '"+dest+"' does not exist!");
+	for( auto& j : data )
+	{
+		if( j.name == dest )
+		{
+			j.content = d;
+			return;
 		}
 	}
+	throw std::runtime_error("Register '"+dest+"' does not exist!");
 }
 
 

@@ -33,13 +33,15 @@ void Machine::run(const Program& p)
 	for(unsigned int iptr = 0; iptr < p.instrs.size(); iptr++ )
 	{
 		mem.back().content = iptr;
-		std::cout << "IP = " << iptr << std::endl;//", instruction : "
-				//<< (typeid(*p.instrs[iptr])) << std::endl;
+		//std::cout << "IP = " << iptr << std::endl;
 		if( iptr >= p.instrs.size() )
 			throw std::runtime_error("Segmentation fault! (IP out of range)");
 
 		p.instrs[iptr]->execute(mem, p.instrs, flags["equal"], flags["zero"]);
 		iptr = mem.back().content;
+		// for(unsigned int i=0; i < mem.size(); i++){
+		// 	std::cout << "\t" << mem[i].name << " -> " << mem[i].content << std::endl;
+		// }
 	}
 }
 

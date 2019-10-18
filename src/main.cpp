@@ -33,10 +33,18 @@ using namespace AR;
 int main(int argc, char* argv[])
 {
 	try {
-		int n = 4;
+		int n = 10;
+		if( argc > 1){
+			try{
+				n = atoi(argv[1]);
+			}
+			catch(std::exception& e){
+				n = 10;
+			}
+		}
 		Program prog;
 
-		prog << std::make_shared<IMov>("(D,"+std::to_string(n)+")");
+		prog << std::make_shared<IMov>("(D,"+std::to_string(n-1)+")");
 		prog << std::make_shared<IMov>("(A,0)");
 		prog << std::make_shared<IMov>("(B,1)");
 
