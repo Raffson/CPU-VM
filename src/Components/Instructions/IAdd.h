@@ -8,14 +8,11 @@
 #ifndef IADD_H_
 #define IADD_H_
 
-#include "../Instruction.h"
+#include "../BinaryInstruction.h"
 
 namespace AR {
 
-class IAdd: public AR::Instruction {
-private:
-	std::string dest;
-	std::string src;
+class IAdd: public AR::BinaryInstruction {
 public:
 	IAdd(const std::string& code);
 	virtual ~IAdd();

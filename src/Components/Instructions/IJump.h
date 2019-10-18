@@ -8,13 +8,11 @@
 #ifndef IJUMP_H_
 #define IJUMP_H_
 
-#include "../Instruction.h"
+#include "../UnaryInstruction.h"
 
 namespace AR {
 
-class IJNE: public AR::Instruction {
-private:
-	std::string dest;
+class IJNE: public AR::UnaryInstruction {
 public:
 	IJNE(const std::string& code);
 	virtual ~IJNE();
@@ -24,9 +22,7 @@ public:
 			bool& equal, bool& zero) const;
 };
 
-class IJNZ: public AR::Instruction {
-private:
-	std::string dest;
+class IJNZ: public AR::UnaryInstruction {
 public:
 	IJNZ(const std::string& code);
 	virtual ~IJNZ();

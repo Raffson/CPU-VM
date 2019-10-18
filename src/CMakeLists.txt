@@ -4,6 +4,8 @@ SET( src	${pref}/Machine.cpp
 			${pref}/Program.cpp
 			${pref}/Register.cpp
 			${pref}/Instruction.cpp
+			${pref}/UnaryInstruction.cpp
+			${pref}/BinaryInstruction.cpp
 			${pref}/Instructions/IMov.cpp
 			${pref}/Instructions/IAdd.cpp
 			${pref}/Instructions/ISub.cpp

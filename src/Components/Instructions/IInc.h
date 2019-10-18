@@ -8,13 +8,11 @@
 #ifndef IINC_H_
 #define IINC_H_
 
-#include "../Instruction.h"
+#include "../UnaryInstruction.h"
 
 namespace AR {
 
-class IInc: public AR::Instruction {
-private:
-	std::string dest;
+class IInc: public AR::UnaryInstruction {
 public:
 	IInc(const std::string& code);
 	virtual ~IInc();

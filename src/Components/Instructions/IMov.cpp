@@ -9,32 +9,9 @@
 
 namespace AR {
 
-IMov::IMov(const std::string& code)
+IMov::IMov(const std::string& code) : BinaryInstruction(code)
 {
-	for( unsigned int i=0; i < code.size(); i++ )
-	{
-		if(code[i] == '(')
-		{
-			for( unsigned int j=i+1; j < code.size(); j++ )
-			{
-				if( code[j] == ',' )
-				{
-					dest = code.substr(i+1, j-i-1);
-				}
-			}
-		}
-		else if(code[i] == ',')
-		{
-			for( unsigned int j=i+1; j < code.size(); j++ )
-			{
-				if( code[j] == ')' )
-				{
-					src = code.substr(i+1);
-					src.pop_back();
-				}
-			}
-		}
-	}
+	// Nothing else should be done
 }
 
 IMov::~IMov() {

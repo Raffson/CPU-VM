@@ -9,22 +9,9 @@
 
 namespace AR {
 
-IInc::IInc(const std::string& code)
+IInc::IInc(const std::string& code) : UnaryInstruction(code)
 {
-	for( unsigned int i=0; i < code.size(); i++ )
-	{
-		if(code[i] == '(')
-		{
-			for( unsigned int j=i+1; j < code.size(); j++ )
-			{
-				if( code[j] == ')' )
-				{
-					dest = code.substr(i+1);
-					dest.pop_back();
-				}
-			}
-		}
-	}
+	// Nothing else should be done
 }
 
 IInc::~IInc() {

@@ -8,14 +8,11 @@
 #ifndef IMOV_H_
 #define IMOV_H_
 
-#include "../Instruction.h"
+#include "../BinaryInstruction.h"
 
 namespace AR {
 
-class IMov: public AR::Instruction {
-private:
-	std::string dest;
-	std::string src;
+class IMov: public AR::BinaryInstruction {
 public:
 	IMov(const std::string& code);
 	virtual ~IMov();

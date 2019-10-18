@@ -8,14 +8,11 @@
 #ifndef ISUB_H_
 #define ISUB_H_
 
-#include "../Instruction.h"
+#include "../BinaryInstruction.h"
 
 namespace AR {
 
-class ISub: public AR::Instruction {
-private:
-	std::string dest;
-	std::string src;
+class ISub: public AR::BinaryInstruction {
 public:
 	ISub(const std::string& code);
 	virtual ~ISub();

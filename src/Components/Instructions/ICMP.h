@@ -8,14 +8,11 @@
 #ifndef ICMP_H_
 #define ICMP_H_
 
-#include "../Instruction.h"
+#include "../BinaryInstruction.h"
 
 namespace AR {
 
-class ICMP: public AR::Instruction {
-private:
-	std::string dest;
-	std::string src;
+class ICMP: public AR::BinaryInstruction {
 public:
 	ICMP(const std::string& code);
 	virtual ~ICMP();
